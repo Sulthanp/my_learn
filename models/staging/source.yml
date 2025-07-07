@@ -1,0 +1,27 @@
+version: 2
+sources:
+    - name: datafeed_shared_schema
+      database: "{{('db_dev')}}"
+      schema: raw_schema
+      tables:
+        - name: raw_customer
+        - name: macro_data
+        - name: raw_orders
+          columns:
+                - name: id
+                  tests:
+                    - not_null
+                    - unique
+                  
+        - name: customers
+          columns:
+                - name: id
+                  tests:
+                    - not_null
+                    - unique
+        - name: jatt
+          columns:
+                - name: id
+                  tests:
+                    - not_null
+                    - unique           
