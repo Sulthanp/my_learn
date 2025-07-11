@@ -13,12 +13,13 @@ p.name AS part_name,
 p.mfgr AS part_manufacturer,
 p.brand AS part_brand,
 p.type AS part_type,
+p.size AS part_size,
 p.container AS part_container,
 p.retailprice AS part_retail_price
 FROM {{ref('stg_supplier')}} as s
 JOIN {{ref('stg_partsupp')}} as ps
 ON s.suppkey=ps.suppkey
-JOIN {{ref('stg_part')}} as p
+JOIN {{ref('stg_part')}} as  p
 ON ps.partkey=p.partkey
 )
 
