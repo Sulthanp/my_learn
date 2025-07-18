@@ -69,3 +69,4 @@ sources:
       schema: di_dev
       tables:
         - name: snap_orderdetails  
+        - name: kbk
