@@ -14,6 +14,7 @@ sources:
              tests:
                - not_null
         - name: macro_data
+        - name: kbk
         - name : raw_region
         - name : raw_supplier
         - name: raw_partsupp
@@ -69,4 +70,4 @@ sources:
       schema: di_dev
       tables:
         - name: snap_orderdetails  
-        - name: kbk
+      
