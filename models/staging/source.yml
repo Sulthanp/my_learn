@@ -5,7 +5,47 @@ sources:
       schema: raw_schema
       tables:
         - name: raw_customer
+          columns:
+           - name: c_custkey
+             tests:
+              - unique
+              - not_null
+           - name: c_name
+             tests:
+               - not_null
         - name: macro_data
+        - name: kbk
+        - name : raw_region
+        - name : raw_supplier
+        - name: raw_partsupp
+        - name: raw_part
+        - name: raw_order
+          columns:
+            - name: o_orderkey
+              tests:
+               - unique
+               - not_null
+        - name: raw_nation
+          columns:
+            - name: n_nationkey
+              tests:
+                - unique
+                - not_null
+            - name: n_name
+              tests:
+                - not_null
+        - name : raw_customer_nation
+        - name: raw_lineitem
+          columns:
+            - name: l_orderkey
+              tests:
+                - not_null
+            - name: l_quantity
+              tests:
+                - not_null
+            - name: l_linenumber
+              tests:
+                - not_null 
         - name: raw_orders
           columns:
                 - name: id
@@ -25,3 +65,9 @@ sources:
                   tests:
                     - not_null
                     - unique           
+    - name: snapshot_tables
+      database: "{{('db_dev')}}"
+      schema: di_dev
+      tables:
+        - name: snap_orderdetails  
+      
